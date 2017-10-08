@@ -24,12 +24,12 @@ public class LoptopCriteriaTest {
     }
 
     @Test
-    public void when_at_least_one_parameter_beside_OS_is_string_should_return_false(){
+    public void when_at_least_one_parameter_beside_OS_is_not_number_should_return_false(){
 
         criteriaLaptop.add(SearchCriteria.Laptop.OS , "string");
         criteriaLaptop.add(SearchCriteria.Laptop.BATTERY_CAPACITY , 10);
         criteriaLaptop.add(SearchCriteria.Laptop.CPU , 10);
-        criteriaLaptop.add(SearchCriteria.Laptop.DISPLAY_INCHS , 10);
+        criteriaLaptop.add(SearchCriteria.Laptop.DISPLAY_INCHS , new Object());
         criteriaLaptop.add(SearchCriteria.Laptop.SYSTEM_MEMORY , "123");
         assertTrue(criteriaValidator(criteriaLaptop) == false);
     }
