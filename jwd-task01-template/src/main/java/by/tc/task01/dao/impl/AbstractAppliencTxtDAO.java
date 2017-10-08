@@ -11,7 +11,7 @@ import java.util.Map;
 
 public abstract class AbstractAppliencTxtDAO extends ApplianceDAOImpl {
 
-    private   final String   PATH ="main"+File.separator+ "resources"+File.separator+"appliances_db.txt";
+    private   final String   PATH ="src"+File.separator+"main"+File.separator+ "resources"+File.separator+"appliances_db.txt";
 
     private   final File file = new File(PATH);
 
