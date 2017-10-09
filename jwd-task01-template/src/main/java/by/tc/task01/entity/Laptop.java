@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 public class Laptop extends Appliance{
 
-    private float batareyCapacity;
+    private float batteryCapacity;
 
     private String os;
 
@@ -16,16 +16,15 @@ public class Laptop extends Appliance{
 
     public Laptop(){
 
-
     }
 
 
-    public float getBatareyCapacity() {
-        return batareyCapacity;
+    public float getBatteryCapacity() {
+        return batteryCapacity;
     }
 
-    public void setBatareyCapacity(float batareyCapacity) {
-        this.batareyCapacity = batareyCapacity;
+    public void setBatteryCapacity(float batareyCapacity) {
+        this.batteryCapacity = batareyCapacity;
     }
 
     public String getOs() {
@@ -78,7 +77,7 @@ public class Laptop extends Appliance{
 
         Laptop laptop = (Laptop) o;
 
-        if (Float.compare(laptop.batareyCapacity, batareyCapacity) != 0) return false;
+        if (Float.compare(laptop.batteryCapacity, batteryCapacity) != 0) return false;
         if (Float.compare(laptop.memoryRom, memoryRom) != 0) return false;
         if (Float.compare(laptop.systemMemory, systemMemory) != 0) return false;
         if (Float.compare(laptop.cpu, cpu) != 0) return false;
@@ -88,7 +87,7 @@ public class Laptop extends Appliance{
 
     @Override
     public int hashCode() {
-        int result = (batareyCapacity != +0.0f ? Float.floatToIntBits(batareyCapacity) : 0);
+        int result = (batteryCapacity != +0.0f ? Float.floatToIntBits(batteryCapacity) : 0);
         result = 31 * result + os.hashCode();
         result = 31 * result + (memoryRom != +0.0f ? Float.floatToIntBits(memoryRom) : 0);
         result = 31 * result + (systemMemory != +0.0f ? Float.floatToIntBits(systemMemory) : 0);
@@ -100,7 +99,7 @@ public class Laptop extends Appliance{
     @Override
     public String toString() {
         return "Laptop{" +
-                "batareyCapacity=" + batareyCapacity +
+                "batareyCapacity=" + batteryCapacity +
                 ", os='" + os + '\'' +
                 ", memoryRom=" + memoryRom +
                 ", systemMemory=" + systemMemory +

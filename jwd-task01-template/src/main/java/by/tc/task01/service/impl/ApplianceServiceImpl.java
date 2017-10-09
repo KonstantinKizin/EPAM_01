@@ -24,7 +24,7 @@ public class ApplianceServiceImpl implements ApplianceService{
 				applianceDAO = new ApplianceDAOImpl();
 				appliance = applianceDAO.find(criteria);
 			} catch (DAOException e) {
-				throw new ServiceException(e.getMessage());
+				throw e;
 			}
 		}
 		return appliance;

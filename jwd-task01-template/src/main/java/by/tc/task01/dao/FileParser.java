@@ -44,11 +44,7 @@ public Map<String , String> getApplianceMap(String appType) throws Exception {
         throw e;
     }finally {
         if(reader != null) {
-            try {
-                reader.close();
-            } catch (Exception e) {
-                throw e;
-            }
+            reader.close();
         }
     }
     return appMap;

@@ -26,7 +26,7 @@ public class OvenTxtDAOImpl extends AbstractAppliencTxtDAO {
 
         oven.setHeight(Float.parseFloat(appliancMap.get(SearchCriteria.Oven.HEIGHT.name())));
 
-        oven.setPowerConsuption(Float.parseFloat(appliancMap.get(SearchCriteria.Oven.POWER_CONSUMPTION.name())));
+        oven.setPowerConsumption(Float.parseFloat(appliancMap.get(SearchCriteria.Oven.POWER_CONSUMPTION.name())));
 
         oven.setWeight(Float.parseFloat(appliancMap.get(SearchCriteria.Oven.WEIGHT.name())));
 

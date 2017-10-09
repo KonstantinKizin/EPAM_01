@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 public class Oven extends Appliance{
 
-    private float powerConsuption;
+    private float powerConsumption;
 
     private float weight;
 
@@ -19,12 +19,12 @@ public class Oven extends Appliance{
     }
 
 
-    public float getPowerConsuption() {
-        return powerConsuption;
+    public float getPowerConsumption() {
+        return powerConsumption;
     }
 
-    public void setPowerConsuption(float powerConsuption) {
-        this.powerConsuption = powerConsuption;
+    public void setPowerConsumption(float powerConsumption) {
+        this.powerConsumption = powerConsumption;
     }
 
     public float getWeight() {
@@ -74,7 +74,7 @@ public class Oven extends Appliance{
 
         Oven oven = (Oven) o;
 
-        if (Float.compare(oven.powerConsuption, powerConsuption) != 0) return false;
+        if (Float.compare(oven.powerConsumption, powerConsumption) != 0) return false;
         if (Float.compare(oven.weight, weight) != 0) return false;
         if (Float.compare(oven.capacity, capacity) != 0) return false;
         if (Float.compare(oven.depth, depth) != 0) return false;
@@ -84,7 +84,7 @@ public class Oven extends Appliance{
 
     @Override
     public int hashCode() {
-        int result = (powerConsuption != +0.0f ? Float.floatToIntBits(powerConsuption) : 0);
+        int result = (powerConsumption != +0.0f ? Float.floatToIntBits(powerConsumption) : 0);
         result = 31 * result + (weight != +0.0f ? Float.floatToIntBits(weight) : 0);
         result = 31 * result + (capacity != +0.0f ? Float.floatToIntBits(capacity) : 0);
         result = 31 * result + (depth != +0.0f ? Float.floatToIntBits(depth) : 0);
@@ -96,7 +96,7 @@ public class Oven extends Appliance{
     @Override
     public String toString() {
         return "Oven{" +
-                "powerConsuption=" + powerConsuption +
+                "powerConsuption=" + powerConsumption +
                 ", weight=" + weight +
                 ", capacity=" + capacity +
                 ", depth=" + depth +

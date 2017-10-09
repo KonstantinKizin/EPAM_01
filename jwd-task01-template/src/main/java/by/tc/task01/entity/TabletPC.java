@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 public class TabletPC extends Appliance{
 
-    private float batareyCapacity;
+    private float batteryCapacity;
 
     private float displayInchs;
 
@@ -10,19 +10,22 @@ public class TabletPC extends Appliance{
 
     private float flashMemoryCapacity;
 
+
     private String color;
 
     public TabletPC(){
 
     }
 
-    public float getBatareyCapacity() {
-        return batareyCapacity;
+    public float getBatteryCapacity() {
+        return batteryCapacity;
     }
 
-    public void setBatareyCapacity(float batareyCapacity) {
-        this.batareyCapacity = batareyCapacity;
+    public void setBatteryCapacity(float batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
     }
+
+
 
     public float getDisplayInchs() {
         return displayInchs;
@@ -63,7 +66,7 @@ public class TabletPC extends Appliance{
 
         TabletPC tabletPC = (TabletPC) o;
 
-        if (Float.compare(tabletPC.batareyCapacity, batareyCapacity) != 0) return false;
+        if (Float.compare(tabletPC.batteryCapacity, batteryCapacity) != 0) return false;
         if (Float.compare(tabletPC.displayInchs, displayInchs) != 0) return false;
         if (Float.compare(tabletPC.memoryRom, memoryRom) != 0) return false;
         if (Float.compare(tabletPC.flashMemoryCapacity, flashMemoryCapacity) != 0) return false;
@@ -72,7 +75,7 @@ public class TabletPC extends Appliance{
 
     @Override
     public int hashCode() {
-        int result = (batareyCapacity != +0.0f ? Float.floatToIntBits(batareyCapacity) : 0);
+        int result = (batteryCapacity != +0.0f ? Float.floatToIntBits(batteryCapacity) : 0);
         result = 31 * result + (displayInchs != +0.0f ? Float.floatToIntBits(displayInchs) : 0);
         result = 31 * result + (memoryRom != +0.0f ? Float.floatToIntBits(memoryRom) : 0);
         result = 31 * result + (flashMemoryCapacity != +0.0f ? Float.floatToIntBits(flashMemoryCapacity) : 0);
@@ -83,7 +86,7 @@ public class TabletPC extends Appliance{
     @Override
     public String toString() {
         return "TabletPC{" +
-                "batareyCapacity=" + batareyCapacity +
+                "batareyCapacity=" + batteryCapacity +
                 ", displayInchs=" + displayInchs +
                 ", memoryRom=" + memoryRom +
                 ", flashMemoryCapacity=" + flashMemoryCapacity +

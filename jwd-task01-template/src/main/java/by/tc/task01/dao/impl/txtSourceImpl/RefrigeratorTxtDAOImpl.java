@@ -24,7 +24,7 @@ public class RefrigeratorTxtDAOImpl extends AbstractAppliencTxtDAO {
 
         ref.setHeight(Float.parseFloat(appliancMap.get(SearchCriteria.Refrigerator.HEIGHT.name())));
 
-        ref.setOvrallCapacity(Float.parseFloat(appliancMap.get(SearchCriteria.Refrigerator.OVERALL_CAPACITY.name())));
+        ref.setOverallCapacity(Float.parseFloat(appliancMap.get(SearchCriteria.Refrigerator.OVERALL_CAPACITY.name())));
 
         ref.setPowerConsumption(Float.parseFloat(appliancMap.get(SearchCriteria.Refrigerator.POWER_CONSUMPTION.name())));
 

@@ -18,7 +18,7 @@ public class SpeakersTxtDAOImpl extends AbstractAppliencTxtDAO {
 
         Speakers speakers = new Speakers();
 
-        speakers.setCordLenght(Float.parseFloat(appliancMap.get(SearchCriteria.Speakers.CORD_LENGTH.name())));
+        speakers.setCordLength(Float.parseFloat(appliancMap.get(SearchCriteria.Speakers.CORD_LENGTH.name())));
 
         speakers.setFrequencyRange(appliancMap.get(SearchCriteria.Speakers.FREQUENCY_RANGE.name()));
 

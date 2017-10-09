@@ -18,7 +18,7 @@ public class TablePCTxtDAOImpl extends AbstractAppliencTxtDAO {
 
         TabletPC tabletPC = new TabletPC();
 
-        tabletPC.setBatareyCapacity(Float.parseFloat(appliancMap.get(SearchCriteria.TabletPC.BATTERY_CAPACITY.name())));
+        tabletPC.setBatteryCapacity(Float.parseFloat(appliancMap.get(SearchCriteria.TabletPC.BATTERY_CAPACITY.name())));
 
         tabletPC.setColor(appliancMap.get(SearchCriteria.TabletPC.COLOR.name()));
 

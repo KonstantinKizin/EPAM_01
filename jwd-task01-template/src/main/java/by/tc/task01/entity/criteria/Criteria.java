@@ -7,7 +7,7 @@ public class Criteria<E> {
 
 	private Map<E, Object> criteria = new HashMap<E, Object>();
 
-	private String applianceName;
+	private String appliancType;
 
 
 	public void add(E searchCriteria, Object value) {
@@ -18,12 +18,13 @@ public class Criteria<E> {
 	public Map<E , Object> getCriteria(){
 		return this.criteria;
 	}
+
 	private void setType(E e){
-		this.applianceName = e.getClass().getSimpleName();
+		this.appliancType = e.getClass().getSimpleName();
 	}
 
-	public String getApplianceName(){
-		return this.applianceName;
+	public String getApplianceType(){
+		return this.appliancType;
 	}
 
 

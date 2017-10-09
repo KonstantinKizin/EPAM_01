@@ -8,10 +8,18 @@ public class Speakers extends Appliance{
 
     private String frequencyRange;
 
-    private float cordLenght;
+    private float cordLength;
 
     public Speakers(){
 
+    }
+
+    public float getCordLength() {
+        return cordLength;
+    }
+
+    public void setCordLength(float cordLength) {
+        this.cordLength = cordLength;
     }
 
     public float getPowerConsumption() {
@@ -38,13 +46,6 @@ public class Speakers extends Appliance{
         this.frequencyRange = frequencyRange;
     }
 
-    public float getCordLenght() {
-        return cordLenght;
-    }
-
-    public void setCordLenght(float cordLenght) {
-        this.cordLenght = cordLenght;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -55,7 +56,7 @@ public class Speakers extends Appliance{
 
         if (Float.compare(speakers.powerConsumption, powerConsumption) != 0) return false;
         if (numberOfSpeakers != speakers.numberOfSpeakers) return false;
-        if (Float.compare(speakers.cordLenght, cordLenght) != 0) return false;
+        if (Float.compare(speakers.cordLength, cordLength) != 0) return false;
         return frequencyRange.equals(speakers.frequencyRange);
     }
 
@@ -64,7 +65,7 @@ public class Speakers extends Appliance{
         int result = (powerConsumption != +0.0f ? Float.floatToIntBits(powerConsumption) : 0);
         result = 31 * result + numberOfSpeakers;
         result = 31 * result + frequencyRange.hashCode();
-        result = 31 * result + (cordLenght != +0.0f ? Float.floatToIntBits(cordLenght) : 0);
+        result = 31 * result + (cordLength != +0.0f ? Float.floatToIntBits(cordLength) : 0);
         return result;
     }
 
@@ -74,7 +75,7 @@ public class Speakers extends Appliance{
                 "powerConsumption=" + powerConsumption +
                 ", numberOfSpeakers=" + numberOfSpeakers +
                 ", frequencyRange='" + frequencyRange + '\'' +
-                ", cordLenght=" + cordLenght +
+                ", cordLenght=" + cordLength +
                 '}';
     }
 }

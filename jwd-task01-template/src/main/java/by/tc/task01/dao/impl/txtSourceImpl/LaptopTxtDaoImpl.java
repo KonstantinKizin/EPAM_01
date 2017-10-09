@@ -22,7 +22,7 @@ public class LaptopTxtDaoImpl extends AbstractAppliencTxtDAO {
 
         Laptop laptop = new Laptop();
 
-        laptop.setBatareyCapacity(Float.parseFloat(appliancMap.get(SearchCriteria.Laptop.BATTERY_CAPACITY.name())));
+        laptop.setBatteryCapacity(Float.parseFloat(appliancMap.get(SearchCriteria.Laptop.BATTERY_CAPACITY.name())));
 
         laptop.setCpu(Float.parseFloat(appliancMap.get(SearchCriteria.Laptop.CPU.name())));
 

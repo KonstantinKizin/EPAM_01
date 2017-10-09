@@ -8,7 +8,7 @@ public class Refrigerator extends Appliance{
 
     private float freezerCapacity;
 
-    private float ovrallCapacity;
+    private float overallCapacity;
 
     private float height;
 
@@ -42,12 +42,12 @@ public class Refrigerator extends Appliance{
         this.freezerCapacity = freezerCapacity;
     }
 
-    public float getOvrallCapacity() {
-        return ovrallCapacity;
+    public float getOverallCapacity() {
+        return overallCapacity;
     }
 
-    public void setOvrallCapacity(float ovrallCapacity) {
-        this.ovrallCapacity = ovrallCapacity;
+    public void setOverallCapacity(float overallCapacity) {
+        this.overallCapacity = overallCapacity;
     }
 
     public float getHeight() {
@@ -76,7 +76,7 @@ public class Refrigerator extends Appliance{
         if (Float.compare(that.powerConsumption, powerConsumption) != 0) return false;
         if (Float.compare(that.weight, weight) != 0) return false;
         if (Float.compare(that.freezerCapacity, freezerCapacity) != 0) return false;
-        if (Float.compare(that.ovrallCapacity, ovrallCapacity) != 0) return false;
+        if (Float.compare(that.overallCapacity, overallCapacity) != 0) return false;
         if (Float.compare(that.height, height) != 0) return false;
         return Float.compare(that.width, width) == 0;
     }
@@ -86,7 +86,7 @@ public class Refrigerator extends Appliance{
         int result = (powerConsumption != +0.0f ? Float.floatToIntBits(powerConsumption) : 0);
         result = 31 * result + (weight != +0.0f ? Float.floatToIntBits(weight) : 0);
         result = 31 * result + (freezerCapacity != +0.0f ? Float.floatToIntBits(freezerCapacity) : 0);
-        result = 31 * result + (ovrallCapacity != +0.0f ? Float.floatToIntBits(ovrallCapacity) : 0);
+        result = 31 * result + (overallCapacity != +0.0f ? Float.floatToIntBits(overallCapacity) : 0);
         result = 31 * result + (height != +0.0f ? Float.floatToIntBits(height) : 0);
         result = 31 * result + (width != +0.0f ? Float.floatToIntBits(width) : 0);
         return result;
@@ -98,7 +98,7 @@ public class Refrigerator extends Appliance{
                 "powerConsumption=" + powerConsumption +
                 ", weight=" + weight +
                 ", freezerCapacity=" + freezerCapacity +
-                ", ovrallCapacity=" + ovrallCapacity +
+                ", ovrallCapacity=" + overallCapacity +
                 ", height=" + height +
                 ", width=" + width +
                 '}';

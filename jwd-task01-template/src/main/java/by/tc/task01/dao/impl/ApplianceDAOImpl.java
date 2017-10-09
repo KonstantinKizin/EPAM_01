@@ -12,7 +12,7 @@ public class ApplianceDAOImpl implements ApplianceDAO{
 	@Override
 	public  <E> Appliance find(Criteria<E> criteria)  {
 		Appliance appliance = null;
-		String applianceName = criteria.getApplianceName();
+		String applianceName = criteria.getApplianceType();
 
 		if(applianceName.equalsIgnoreCase("Oven")){
 			appliance =  new OvenTxtDAOImpl().find(criteria);

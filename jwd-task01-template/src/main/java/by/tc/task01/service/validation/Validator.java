@@ -12,7 +12,11 @@ public class Validator {
 	
 	public static <E> boolean criteriaValidator(Criteria<E> criteria) {
 		Map<Object , Object> criterian = (Map<Object, Object>)criteria.getCriteria();
-		String applianceName = criteria.getApplianceName();
+		String applianceName = criteria.getApplianceType();
+
+		if(criterian.values().size() == 0){
+			return false;
+		}
 
 		if(applianceName.equalsIgnoreCase("Oven")){
 			return checkOvenCriterias( criterian);
