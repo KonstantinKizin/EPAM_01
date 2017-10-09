@@ -1,15 +1,11 @@
 package by.tc.task01.service.validation;
 
 import by.tc.task01.entity.criteria.Criteria;
-import by.tc.task01.entity.criteria.SearchCriteria;
 import by.tc.task01.service.validation.command.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 public class Validator {
 

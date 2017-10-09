@@ -11,36 +11,40 @@ public class VacuumCleanerValidator extends AbstractApplianceValidator  implemen
 
     private Map<Object , Object> criterians;
 
+    private Collection<Object> nubmerParamet;
+
     public VacuumCleanerValidator(Map<Object, Object> criterians) {
         this.criterians = criterians;
+        nubmerParamet = new ArrayList<Object>(criterians.values());
     }
+
+
+
 
     @Override
     public boolean execute() {
-        if(criterians.containsKey(SearchCriteria.VacuumCleaner.FILTER_TYPE)){
-            Object filterType = criterians.get(SearchCriteria.VacuumCleaner.FILTER_TYPE);
-            if((filterType instanceof String) == false) return false;
-        }
 
-        if(criterians.containsKey(SearchCriteria.VacuumCleaner.BAG_TYPE)){
-            Object bagType = criterians.get(SearchCriteria.VacuumCleaner.BAG_TYPE);
-            if((bagType instanceof String) == false) return false;
-        }
+        boolean filterTypeFlag = this.checkForStringField(SearchCriteria.VacuumCleaner.FILTER_TYPE);
+        boolean bagTypeFlag = this.checkForStringField(SearchCriteria.VacuumCleaner.BAG_TYPE);
+        boolean wandType = this.checkForStringField(SearchCriteria.VacuumCleaner.WAND_TYPE);
 
-        if(criterians.containsKey(SearchCriteria.VacuumCleaner.WAND_TYPE)){
-            Object wandType = criterians.get(SearchCriteria.VacuumCleaner.WAND_TYPE);
-            if((wandType instanceof String) == false) return false;
-        }
-
-        Collection<Object> nubmerParamet = new ArrayList<Object>();
-
-        for(Object obj : criterians.values()){
-            if(obj instanceof Number){
-                nubmerParamet.add(obj);
-            }
+        if(!(filterTypeFlag && bagTypeFlag && wandType)){
+            return false;
         }
 
         return super.cheakforNumber(nubmerParamet);
+    }
 
+    
+    private boolean checkForStringField(SearchCriteria.VacuumCleaner criteriaName){
+
+        if(criterians.containsKey(criteriaName)){
+            Object obj = criterians.get(criteriaName);
+           if(obj instanceof String){
+               if((((String) obj).length() == 0)) return false;
+               nubmerParamet.remove(obj);
+            }else return false;
+        }
+         return true;
     }
 }
