@@ -5,7 +5,7 @@ import by.tc.task01.entity.criteria.SearchCriteria;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class TablePCValidator  extends AbstractApplianceValidator implements Command {
+public class TablePCValidator  extends ApplianceValidator implements Command {
 
     private Map<Object , Object> criterians;
 

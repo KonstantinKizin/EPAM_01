@@ -15,10 +15,6 @@ public class Validator {
 
 		Map<Object , Object> criterians = (Map<Object, Object>)criteria.getCriteria();
 
-		if(criterians.values().size() == 0) {
-			return false;
-		}
-
 		String applianceType = criteria.getApplianceType();
 
 		ApplianceCommandDirector commandDirector = new ApplianceCommandDirector(criterians);

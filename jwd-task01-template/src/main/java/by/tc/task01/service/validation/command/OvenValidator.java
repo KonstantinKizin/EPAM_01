@@ -2,7 +2,7 @@ package by.tc.task01.service.validation.command;
 
 import java.util.Map;
 
-public class OvenValidator  extends AbstractApplianceValidator implements Command {
+public class OvenValidator  extends ApplianceValidator implements Command {
 
     private Map<Object , Object> criterians;
 

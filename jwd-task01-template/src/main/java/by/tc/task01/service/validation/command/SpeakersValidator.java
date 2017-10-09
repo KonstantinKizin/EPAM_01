@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SpeakersValidator  extends AbstractApplianceValidator implements Command {
+public class SpeakersValidator  extends ApplianceValidator implements Command {
 
     private Map<Object , Object> criterians;
 

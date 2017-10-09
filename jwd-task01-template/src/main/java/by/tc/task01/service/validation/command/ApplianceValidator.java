@@ -1,11 +1,10 @@
 package by.tc.task01.service.validation.command;
 
 import by.tc.task01.entity.criteria.SearchCriteria;
-
 import java.util.Collection;
 import java.util.Map;
 
-public abstract class AbstractApplianceValidator {
+public abstract class ApplianceValidator {
 
     protected boolean cheakforNumber(Collection<Object> values){
 

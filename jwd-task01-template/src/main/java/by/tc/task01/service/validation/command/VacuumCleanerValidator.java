@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
-public class VacuumCleanerValidator extends AbstractApplianceValidator  implements Command {
+public class VacuumCleanerValidator extends ApplianceValidator implements Command {
 
     private Map<Object , Object> criterians;
 
@@ -35,7 +35,7 @@ public class VacuumCleanerValidator extends AbstractApplianceValidator  implemen
         return super.cheakforNumber(nubmerParamet);
     }
 
-    
+
     private boolean checkForStringField(SearchCriteria.VacuumCleaner criteriaName){
 
         if(criterians.containsKey(criteriaName)){
