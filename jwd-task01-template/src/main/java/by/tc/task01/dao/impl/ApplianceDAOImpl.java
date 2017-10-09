@@ -9,23 +9,35 @@ import by.tc.task01.entity.criteria.Criteria;
 
 public class ApplianceDAOImpl implements ApplianceDAO{
 
+	private OvenTxtDAOImpl ovenTxtDAO = new OvenTxtDAOImpl();
+
+	private LaptopTxtDaoImpl laptopTxtDao = new LaptopTxtDaoImpl();
+
+	private RefrigeratorTxtDAOImpl refrigeratorTxtDAO = new RefrigeratorTxtDAOImpl();
+
+	private TablePCTxtDAOImpl tablePCTxtDAO = new TablePCTxtDAOImpl();
+
+	private SpeakersTxtDAOImpl speakersTxtDAO = new SpeakersTxtDAOImpl();
+
+	private VacuumTxtDAOImpl vacuumTxtDAO = new VacuumTxtDAOImpl();
+
 	@Override
 	public  <E> Appliance find(Criteria<E> criteria)  {
 		Appliance appliance = null;
 		String applianceName = criteria.getApplianceType();
 
 		if(applianceName.equalsIgnoreCase("Oven")){
-			appliance =  new OvenTxtDAOImpl().find(criteria);
+			appliance =  ovenTxtDAO.find(criteria);
 		}else if(applianceName.equalsIgnoreCase("Laptop")){
-			appliance = new LaptopTxtDaoImpl().find(criteria);
+			appliance = laptopTxtDao.find(criteria);
 		}else if(applianceName.equalsIgnoreCase("Refrigerator")){
-			appliance = new RefrigeratorTxtDAOImpl().find(criteria);
+			appliance = refrigeratorTxtDAO.find(criteria);
 		}else if(applianceName.equalsIgnoreCase("TabletPC")){
-			appliance = new TablePCTxtDAOImpl().find(criteria);
+			appliance = tablePCTxtDAO.find(criteria);
 		}else if(applianceName.equalsIgnoreCase("Speakers")){
-			appliance = new SpeakersTxtDAOImpl().find(criteria);
+			appliance = speakersTxtDAO.find(criteria);
 		}else if(applianceName.equalsIgnoreCase("VacuumCleaner")){
-			appliance  = new VacuumTxtDAOImpl().find(criteria);
+			appliance  = vacuumTxtDAO.find(criteria);
 		}
 
 		return appliance;

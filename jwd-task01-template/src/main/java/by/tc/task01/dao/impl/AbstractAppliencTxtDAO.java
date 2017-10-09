@@ -1,5 +1,6 @@
 package by.tc.task01.dao.impl;
 
+import by.tc.task01.dao.ApplianceDAO;
 import by.tc.task01.dao.DAOException;
 import by.tc.task01.dao.FileParser;
 import by.tc.task01.entity.Appliance;
@@ -9,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-public abstract class AbstractAppliencTxtDAO extends ApplianceDAOImpl {
+public abstract class AbstractAppliencTxtDAO implements ApplianceDAO {
 
     private static final String   PATH ="src"+File.separator+"main"+File.separator+ "resources"+File.separator+"appliances_db.txt";
 
@@ -29,9 +30,9 @@ public abstract class AbstractAppliencTxtDAO extends ApplianceDAOImpl {
                 appliance = buildAppliance(appMap);
             }
         }catch (IOException e){
-            throw new DAOException(e);
+            throw new DAOException("Info for Log",e);
         }catch (Exception e){
-            throw new DAOException(e);
+            throw new DAOException("Info for Log" , e);
         }
         return appliance;
 
