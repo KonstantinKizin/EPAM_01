@@ -2,16 +2,22 @@ package by.tc.task01.service.validation;
 
 import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.entity.criteria.SearchCriteria;
+import by.tc.task01.service.validation.command.*;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validator {
+
+	private Map<String , Command> commandMap = new HashMap<String, Command>();
 	
 	public static <E> boolean criteriaValidator(Criteria<E> criteria) {
 		Map<Object , Object> criterian = (Map<Object, Object>)criteria.getCriteria();
+
 		String applianceName = criteria.getApplianceType();
 
 		if(criterian.values().size() == 0){
@@ -46,6 +52,13 @@ public class Validator {
 
 		return false;
 	}
+
+
+
+
+
+
+
 
 	private static boolean checkOvenCriterias(Map<Object , Object> criterian){
 		return checkForNumber(criterian.values());
