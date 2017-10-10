@@ -1,7 +1,6 @@
 package by.tc.task01.dao;
 
 import by.tc.task01.dao.impl.ApplianceDAOImpl;
-import by.tc.task01.dao.impl.txtSourceImpl.LaptopTxtDaoImpl;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.Laptop;
 import by.tc.task01.entity.criteria.Criteria;
@@ -12,7 +11,7 @@ import org.junit.Test;
 
 public class LaptopDaoTest {
 
-    private static ApplianceDAO laptopTxtDao;
+    private static ApplianceDAO applianceDAO;
 
     private static Laptop laptop;
 
@@ -23,7 +22,7 @@ public class LaptopDaoTest {
     @BeforeClass
     public static void setUpClass(){
 
-        laptopTxtDao = new ApplianceDAOImpl();
+        applianceDAO = new ApplianceDAOImpl();
 
         laptop = new Laptop();
         laptop.setBatteryCapacity(1);
@@ -43,32 +42,34 @@ public class LaptopDaoTest {
 
     }
 
-
-
-    @Test
-    public void loocking_laptop_by_batteryCapacity(){
-
-        Criteria<SearchCriteria.Laptop> criteria = new Criteria<SearchCriteria.Laptop>();
-        criteria.add(SearchCriteria.Laptop.BATTERY_CAPACITY , 1);
-        Appliance appliance = laptopTxtDao.find(criteria);
-        Assert.assertTrue(appliance.equals(laptop));
-
-        Criteria<SearchCriteria.Laptop> criteria1 = new Criteria<SearchCriteria.Laptop>();
-        criteria.add(SearchCriteria.Laptop.BATTERY_CAPACITY , 1.5f);
-        Appliance appliance1 = laptopTxtDao.find(criteria);
-        Assert.assertTrue(appliance1.equals(laptop1));
-
-    }
-
     @Test
     public void when_dont_find_then_should_return_null(){
 
         Criteria<SearchCriteria.Laptop> criteria = new Criteria<SearchCriteria.Laptop>();
-        criteria.add(SearchCriteria.Laptop.BATTERY_CAPACITY , 5);
-        Appliance appliance = laptopTxtDao.find(criteria);
+        criteria.add(SearchCriteria.Laptop.BATTERY_CAPACITY , 12);
+        Appliance appliance = applianceDAO.find(criteria);
         Assert.assertTrue(appliance == null);
 
     }
+
+
+
+    @Test
+    public void when_laptop_found_then_should_return_correct_laptop(){
+
+        Criteria<SearchCriteria.Laptop> criteria = new Criteria<SearchCriteria.Laptop>();
+        criteria.add(SearchCriteria.Laptop.BATTERY_CAPACITY , 1);
+        Appliance appliance = applianceDAO.find(criteria);
+        Assert.assertTrue(appliance.equals(laptop));
+
+        Criteria<SearchCriteria.Laptop> criteria1 = new Criteria<SearchCriteria.Laptop>();
+        criteria.add(SearchCriteria.Laptop.BATTERY_CAPACITY , 1.5f);
+        Appliance appliance1 = applianceDAO.find(criteria);
+        Assert.assertTrue(appliance1.equals(laptop1));
+
+    }
+
+
 
 
 

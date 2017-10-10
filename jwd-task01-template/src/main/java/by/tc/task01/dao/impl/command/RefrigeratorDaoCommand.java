@@ -4,7 +4,6 @@ import by.tc.task01.dao.impl.txtSourceImpl.RefrigeratorTxtDAOImpl;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
 
-import java.util.Map;
 
 public class RefrigeratorDaoCommand implements Command {
 
