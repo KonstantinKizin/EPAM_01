@@ -5,7 +5,7 @@ import by.tc.task01.entity.criteria.SearchCriteria;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class TablePCValidator  extends ApplianceValidator implements Command {
+public class TablePCValidator  implements Command {
 
     private Map<Object , Object> criterians;
 
@@ -22,9 +22,9 @@ public class TablePCValidator  extends ApplianceValidator implements Command {
             Object value = criterians.get(SearchCriteria.TabletPC.COLOR);
             SearchCriteria.TabletPC key = SearchCriteria.TabletPC.COLOR;
             values.remove(value);
-            return super.cheakforNumber(values);
+            return NumberValidator.cheakforNumber(values);
         }else {
-            return super.cheakforNumber(values);
+            return NumberValidator.cheakforNumber(values);
         }
     }
 }

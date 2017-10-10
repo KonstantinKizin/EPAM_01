@@ -1,11 +1,10 @@
 package by.tc.task01.service.validation.command;
-
 import by.tc.task01.entity.criteria.SearchCriteria;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-public class LaptopValidator extends ApplianceValidator implements Command {
+public class LaptopValidator  implements Command {
 
     private Map<Object , Object> criterians;
 
@@ -18,12 +17,13 @@ public class LaptopValidator extends ApplianceValidator implements Command {
         ArrayList<Object> values = new ArrayList<Object>(criterians.values());
 
         if(criterians.containsKey(SearchCriteria.Laptop.OS) == false){
-            return super.cheakforNumber(criterians.values());
+            return NumberValidator.cheakforNumber(criterians.values());
+
         }else{
             Object os = criterians.get(SearchCriteria.Laptop.OS);
             if( os instanceof String){
                 values.remove(os);
-                return cheakforNumber(values);
+                return NumberValidator.cheakforNumber(values);
             }else {
                 return false;
             }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
-public class VacuumCleanerValidator extends ApplianceValidator implements Command {
+public class VacuumCleanerValidator  implements Command {
 
     private Map<Object , Object> criterians;
 
@@ -31,8 +31,7 @@ public class VacuumCleanerValidator extends ApplianceValidator implements Comman
         if(!(filterTypeFlag && bagTypeFlag && wandType)){
             return false;
         }
-
-        return super.cheakforNumber(nubmerParamet);
+        return NumberValidator.cheakforNumber(nubmerParamet);
     }
 
 

@@ -2,7 +2,7 @@ package by.tc.task01.service.validation.command;
 
 import java.util.Map;
 
-public class OvenValidator  extends ApplianceValidator implements Command {
+public class OvenValidator  implements Command {
 
     private Map<Object , Object> criterians;
 
@@ -12,6 +12,6 @@ public class OvenValidator  extends ApplianceValidator implements Command {
 
     @Override
     public boolean execute() {
-        return super.cheakforNumber(criterians.values());
+        return NumberValidator.cheakforNumber(criterians.values());
     }
 }

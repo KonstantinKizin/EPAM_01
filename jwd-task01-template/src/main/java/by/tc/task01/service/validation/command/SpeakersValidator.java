@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SpeakersValidator  extends ApplianceValidator implements Command {
+public class SpeakersValidator  implements Command {
 
     private Map<Object , Object> criterians;
 
@@ -30,6 +30,6 @@ public class SpeakersValidator  extends ApplianceValidator implements Command {
                 }else return false;
             }else return false;
         }
-        return super.cheakforNumber(values);
+        return NumberValidator.cheakforNumber(values);
     }
 }
