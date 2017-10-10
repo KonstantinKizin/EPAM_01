@@ -22,9 +22,12 @@ public abstract class AbstractAppliencTxtDAO implements ApplianceDAO {
 
     @Override
     public  <E> Appliance find(Criteria<E> criteria)  {
+
         FileParser fileParser = new FileParser(file , criteria);
+
         Appliance appliance = null;
         try {
+
             Map<String , String> appMap = fileParser.getApplianceMap(getTypeName());
             if (appMap != null) {
                 appliance = buildAppliance(appMap);

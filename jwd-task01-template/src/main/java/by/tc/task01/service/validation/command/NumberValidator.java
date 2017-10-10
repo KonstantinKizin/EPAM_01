@@ -12,7 +12,7 @@ public abstract class NumberValidator {
                     return false;
                 }
             }
-            
+
             if((tmp instanceof Number) == false) {
                 return false;
             }

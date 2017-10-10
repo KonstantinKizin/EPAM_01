@@ -1,19 +1,21 @@
 package by.tc.task01.dao.impl.command;
 
+import by.tc.task01.dao.impl.txtSourceImpl.SpeakersTxtDAOImpl;
 import by.tc.task01.entity.Appliance;
+import by.tc.task01.entity.criteria.Criteria;
 
 import java.util.Map;
 
 public class SpeakersDaoCommand implements Command {
 
-    private Map<Object , Object> criterians;
+    private Criteria criteria ;
 
-    public SpeakersDaoCommand(Map<Object, Object> criterians) {
-        this.criterians = criterians;
+    public SpeakersDaoCommand(Criteria criteria) {
+        this.criteria = criteria;
     }
 
     @Override
     public Appliance execute() {
-        return null;
+        return new SpeakersTxtDAOImpl().find(criteria);
     }
 }

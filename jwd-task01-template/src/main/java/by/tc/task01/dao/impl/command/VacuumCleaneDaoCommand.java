@@ -1,23 +1,21 @@
 package by.tc.task01.dao.impl.command;
 
+import by.tc.task01.dao.impl.txtSourceImpl.VacuumTxtDAOImpl;
 import by.tc.task01.entity.Appliance;
+import by.tc.task01.entity.criteria.Criteria;
 
 import java.util.Map;
 
 public class VacuumCleaneDaoCommand implements Command {
 
-    private Map<Object , Object> criterians;
+   private Criteria criteria;
 
-
-
-
-    public VacuumCleaneDaoCommand(Map<Object, Object> criterians) {
-        this.criterians = criterians;
+    public VacuumCleaneDaoCommand(Criteria criteria) {
+        this.criteria = criteria;
     }
-
 
     @Override
     public Appliance execute() {
-        return null;
+        return new VacuumTxtDAOImpl().find(criteria);
     }
 }
