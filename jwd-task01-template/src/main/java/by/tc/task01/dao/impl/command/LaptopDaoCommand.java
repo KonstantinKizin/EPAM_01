@@ -10,7 +10,6 @@ public class LaptopDaoCommand implements Command {
 
     private Criteria<SearchCriteria.Laptop> criterian;
 
-    private AbstractAppliencTxtDAO appliencTxtDAO = new LaptopTxtDaoImpl();
 
     public LaptopDaoCommand(Criteria criteria) {
         this.criterian = criteria;
@@ -18,7 +17,7 @@ public class LaptopDaoCommand implements Command {
 
     @Override
     public Appliance execute() {
-        return appliencTxtDAO.find(criterian);
+        return new LaptopTxtDaoImpl().find(criterian);
 
     }
 }

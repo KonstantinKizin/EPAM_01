@@ -11,9 +11,6 @@ private File file;
 
 private Criteria criteria;
 
-
-
-
 public FileParser(File file , Criteria criteria){
     this.file = file;
     this.criteria = criteria;
