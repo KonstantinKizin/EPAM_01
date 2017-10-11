@@ -3,11 +3,11 @@ package by.tc.task01.service.validation.command;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ApplianceCommandDirector {
+public class ValidateDirector {
 
     private Map<String , Command> commandMap = new HashMap<String, Command>();
 
-    public ApplianceCommandDirector(Map<Object,Object> criteriaMap) {
+    public ValidateDirector(Map<Object,Object> criteriaMap) {
 
         commandMap.put("Oven" , new OvenValidator(criteriaMap));
         commandMap.put("Laptop" , new LaptopValidator(criteriaMap));

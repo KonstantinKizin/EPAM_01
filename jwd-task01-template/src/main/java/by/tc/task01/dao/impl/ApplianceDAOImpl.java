@@ -9,20 +9,14 @@ import by.tc.task01.entity.criteria.Criteria;
 
 public class ApplianceDAOImpl implements ApplianceDAO{
 
-
-
 	@Override
 	public  <E> Appliance find(Criteria<E> criteria)  {
-
-		Appliance appliance = null;
 
 		String applianceType = criteria.getApplianceType();
 
 		DaoDirector daoDirector = new DaoDirector(criteria);
 
-		appliance = daoDirector.find(applianceType);
-
-		return appliance;
+		return daoDirector.find(applianceType);
 	}
 
 }

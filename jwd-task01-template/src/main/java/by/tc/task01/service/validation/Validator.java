@@ -2,7 +2,6 @@ package by.tc.task01.service.validation;
 
 import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.service.validation.command.*;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +20,7 @@ public class Validator {
 
 		String applianceType = criteria.getApplianceType();
 
-		ApplianceCommandDirector commandDirector = new ApplianceCommandDirector(criterians);
+		ValidateDirector commandDirector = new ValidateDirector(criterians);
 
 		return commandDirector.validate(applianceType);
 	}

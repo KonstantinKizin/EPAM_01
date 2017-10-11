@@ -31,7 +31,7 @@ public class VacuumCleanerValidator  implements Command {
         if(!(filterTypeFlag && bagTypeFlag && wandType)){
             return false;
         }
-        return NumberValidator.cheakforNumber(nubmerParamet);
+        return NumberValidator.checkforNumber(nubmerParamet);
     }
 
 

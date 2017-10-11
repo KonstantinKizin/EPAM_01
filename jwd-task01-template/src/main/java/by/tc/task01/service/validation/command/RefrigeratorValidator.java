@@ -12,6 +12,6 @@ public class RefrigeratorValidator implements Command {
 
     @Override
     public boolean execute() {
-        return NumberValidator.cheakforNumber(criterians.values());
+        return NumberValidator.checkforNumber(criterians.values());
     }
 }

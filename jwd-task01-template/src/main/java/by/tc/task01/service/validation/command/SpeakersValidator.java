@@ -30,6 +30,6 @@ public class SpeakersValidator  implements Command {
                 }else return false;
             }else return false;
         }
-        return NumberValidator.cheakforNumber(values);
+        return NumberValidator.checkforNumber(values);
     }
 }

@@ -33,9 +33,9 @@ public abstract class AbstractAppliencTxtDAO implements ApplianceDAO {
                 appliance = buildAppliance(appMap);
             }
         }catch (IOException e){
-            throw new DAOException("Info for Log",e);
+            throw new DAOException(e.getMessage());
         }catch (Exception e){
-            throw new DAOException("Info for Log" , e);
+            throw new DAOException(e.getMessage());
         }
         return appliance;
 

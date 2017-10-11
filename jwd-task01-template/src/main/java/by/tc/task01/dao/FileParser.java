@@ -22,11 +22,12 @@ public FileParser(File file , Criteria criteria){
 public Map<String , String> getApplianceMap(String appType) throws Exception {
 
     Map<String , String> appMap = null;
-    Scanner reader = null;
+
 
     List<String > criterians = getCriteriansList(this.criteria);
-    try{
-        reader  = new Scanner(file);
+
+    try(Scanner reader  = new Scanner(file)){
+
         while (reader.hasNextLine()){
             String line = reader.nextLine();
             if(line.startsWith(appType)){
@@ -39,10 +40,8 @@ public Map<String , String> getApplianceMap(String appType) throws Exception {
         }
     }catch (IOException e){
         throw e;
-    }finally {
-        if(reader != null) {
-            reader.close();
-        }
+    }catch (Exception e){
+        throw e;
     }
     return appMap;
 }

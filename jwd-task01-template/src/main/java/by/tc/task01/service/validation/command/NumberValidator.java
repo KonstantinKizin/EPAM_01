@@ -4,7 +4,7 @@ import java.util.Collection;
 
 public abstract class NumberValidator {
 
-    static boolean cheakforNumber(Collection<Object> values){
+    static boolean checkforNumber(Collection<Object> values){
 
         for(Object tmp : values){
             if((tmp instanceof Number)){

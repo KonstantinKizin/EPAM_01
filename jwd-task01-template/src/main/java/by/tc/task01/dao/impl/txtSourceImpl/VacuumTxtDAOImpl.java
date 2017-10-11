@@ -17,19 +17,12 @@ public class VacuumTxtDAOImpl extends AbstractAppliencTxtDAO{
     protected Appliance buildAppliance(Map<String, String> appliancMap) {
 
         VacuumCleaner vacuum = new VacuumCleaner();
-
         vacuum.setBagType(appliancMap.get(SearchCriteria.VacuumCleaner.BAG_TYPE.name()));
-
         vacuum.setFilterType(appliancMap.get(SearchCriteria.VacuumCleaner.FILTER_TYPE.name()));
-
         vacuum.setWandType(appliancMap.get(SearchCriteria.VacuumCleaner.WAND_TYPE.name()));
-
         vacuum.setCleaningWidth(Float.parseFloat(appliancMap.get(SearchCriteria.VacuumCleaner.CLEANING_WIDTH.name())));
-
         vacuum.setPowerConsumption(Float.parseFloat(appliancMap.get(SearchCriteria.VacuumCleaner.POWER_CONSUMPTION.name())));
-
         vacuum.setMotorSpeedRegulation(Float.parseFloat(appliancMap.get(SearchCriteria.VacuumCleaner.MOTOR_SPEED_REGULATION.name())));
-
         return vacuum;
     }
 }

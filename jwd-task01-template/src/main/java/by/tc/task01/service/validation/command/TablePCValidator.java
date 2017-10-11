@@ -22,9 +22,9 @@ public class TablePCValidator  implements Command {
             Object value = criterians.get(SearchCriteria.TabletPC.COLOR);
             SearchCriteria.TabletPC key = SearchCriteria.TabletPC.COLOR;
             values.remove(value);
-            return NumberValidator.cheakforNumber(values);
+            return NumberValidator.checkforNumber(values);
         }else {
-            return NumberValidator.cheakforNumber(values);
+            return NumberValidator.checkforNumber(values);
         }
     }
 }

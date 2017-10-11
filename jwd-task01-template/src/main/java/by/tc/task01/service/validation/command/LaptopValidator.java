@@ -17,13 +17,13 @@ public class LaptopValidator  implements Command {
         ArrayList<Object> values = new ArrayList<Object>(criterians.values());
 
         if(criterians.containsKey(SearchCriteria.Laptop.OS) == false){
-            return NumberValidator.cheakforNumber(criterians.values());
+            return NumberValidator.checkforNumber(criterians.values());
 
         }else{
             Object os = criterians.get(SearchCriteria.Laptop.OS);
             if( os instanceof String){
                 values.remove(os);
-                return NumberValidator.cheakforNumber(values);
+                return NumberValidator.checkforNumber(values);
             }else {
                 return false;
             }
